@@ -10,12 +10,15 @@
       apt:
         name: python-docker
         state: present
+      loop:
+        - python3
+        - python-docker
       when:
         - ansible_distribution == "Ubuntu"
     - name: run container
       docker_container:
         name: apache2
-        state: present
+        state: started
         image: rickyew/httpd:5
         published_ports:
           - 8081:80
