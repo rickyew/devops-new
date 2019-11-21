@@ -10,9 +10,6 @@
       apt:
         name: python-docker
         state: present
-      loop:
-        - python3
-        - python-docker
       when:
         - ansible_distribution == "Ubuntu"
     - name: run container
