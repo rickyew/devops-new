@@ -17,5 +17,5 @@
         name: apache2
         state: present
         image: rickyew/httpd:5
-        published_ports:
+        ports:
           - 8081:80
